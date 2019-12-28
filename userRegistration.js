@@ -14,6 +14,11 @@ class UserRegistarion {
                 let pattern = RegExp("^[0-9]{2}[[:space:]][0-9]{10}$")
                 return pattern.test(mNum);
         }
+
+	checkPassword(password){
+		 let pattern = RegExp("^[a-zA-Z]{8,}$")
+                return pattern.test(password);
+        }
 }
 module.exports = new UserRegistarion();
 

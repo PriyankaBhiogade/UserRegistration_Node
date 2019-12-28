@@ -29,4 +29,11 @@ if(userRegistraion.checkMobileNum(mobileNum)){
         console.log("Invalid Mobile Number");
 }
 
+let password = read.question("Enter your Password : ");
+if(userRegistraion.checkPassword(password)){
+        console.log("Valid Password");
+}else{
+        console.log("Invalid Password");
+}
+
 
