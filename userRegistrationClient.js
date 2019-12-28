@@ -21,3 +21,12 @@ if(userRegistraion.checkEmail(email)){
 }else{
         console.log("Invalid Email");
 }
+
+let mobileNum = read.question("Enter your Mobile Number : ");
+if(userRegistraion.checkMobileNum(mobileNum)){
+        console.log("Valid Mobile Number");
+}else{
+        console.log("Invalid Mobile Number");
+}
+
+
