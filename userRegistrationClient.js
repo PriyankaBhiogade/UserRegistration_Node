@@ -9,9 +9,15 @@ if(userRegistraion.checkFirstName(firstName)){
 }
 
 let lastName = read.question("Enter your Last Name : ");
-if(userRegistraion.checkLastName(lastName)){
+if(userRegistraion.checkFirstName(lastName)){
         console.log("Valid Last Name");
 }else{
         console.log("Invalid Last Name");
 }
 
+let email = read.question("Enter your Email : ");
+if(userRegistraion.checkEmail(email)){
+        console.log("Valid Email");
+}else{
+        console.log("Invalid Email");
+}
