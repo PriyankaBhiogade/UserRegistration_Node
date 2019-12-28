@@ -16,7 +16,7 @@ class UserRegistarion {
         }
 
 	checkPassword(password){
-		 let pattern = RegExp("^[a-zA-Z]{8,}$")
+		 let pattern = RegExp("[a-zA-Z]*[A-Z]+[a-zA-Z]*$")
                 return pattern.test(password);
         }
 }
