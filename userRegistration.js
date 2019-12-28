@@ -16,9 +16,17 @@ class UserRegistarion {
         }
 
 	checkPassword(password){
-		 let pattern = RegExp("[a-zA-Z]*[A-Z]+[a-zA-Z]*$")
-                return pattern.test(password);
-        }
+		let pattern1 = RegExp("^[a-zA-Z0-9!@#$%^&*()<>-_+]{8,}");
+		let pattern2 = RegExp("[A-Z]");
+		let pattern3 = RegExp("[0-9]");
+		let pattern4 = RegExp("^([a-zA-Z0-9])*[!@#$%^&*()<>-_+]{1}([a-zA-Z0-9])*$");
+		if(pattern4.test(password)){
+			return pattern1.test(password) && pattern2.test(password) && pattern3.test(password);
+		}else{
+			return false;
+		}
+	}
+
 }
 module.exports = new UserRegistarion();
 
