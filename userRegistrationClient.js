@@ -8,3 +8,10 @@ if(userRegistraion.checkFirstName(firstName)){
 	console.log("Invalid Firstname");
 }
 
+let lastName = read.question("Enter your Last Name : ");
+if(userRegistraion.checkLastName(lastName)){
+        console.log("Valid Last Name");
+}else{
+        console.log("Invalid Last Name");
+}
+
