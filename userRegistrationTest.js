@@ -12,9 +12,9 @@ describe("First Name validation Test",function() {
 		assert.ok(check);
 	});
 
-	it("givenFirstName_WhenAllCapLetter_Should return true ",function(){
+	it("givenFirstName_WhenAllCapLetter_Should return false ",function(){
                 let check = checkPattern.checkFirstName("PRIYANKA");
-                assert(check);
+                assert(check == false);
         });
 
 	it("givenFirstName_WhenEmpty_Should return false ",function(){
@@ -51,4 +51,103 @@ describe("First Name validation Test",function() {
                 let check = checkPattern.checkFirstName("pRiY@");
                 assert(check == false);
         });
+
 });
+
+describe("Emial validation Test",function() {
+        it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc@yahoo.com");
+                assert.ok(check);
+        });
+
+	it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc-100@yahoo.com");
+                assert.ok(check);
+        });
+
+	it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc.100@yahoo.com");
+                assert.ok(check);
+        });
+
+	it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc111@yahoo.com");
+                assert.ok(check);
+        });
+
+	it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc-100@abc.com");
+                assert.ok(check);
+        });
+
+	it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc.100@abc.com.in");
+                assert.ok(check);
+        });
+
+	it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc@1.com");
+                assert.ok(check);
+        });
+
+        it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc@abc.com.com");
+                assert.ok(check);
+        });
+
+         it("givenEmail_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkEmail("abc+100@abc.com");
+                assert.ok(check);
+        });
+
+	it("givenEmail_When'@'SymbolMissing_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc111yahoo.com");
+                assert(check == false);
+        });
+
+        it("givenEmail_WhenStartWith'.'_Should return false ",function(){
+                let check = checkPattern.checkEmail(".abc-100@abc.com");
+              assert(check == false);
+        });
+
+        it("givenEmail_WhenAtLastContain'1'Char_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc.100@abc.com.i");
+              assert(check == false);
+        });
+
+        it("givenEmail_WhenStartWith'.'_Should return false ",function(){
+                let check = checkPattern.checkEmail(".abc@1.com");
+              assert(check == false);
+        });
+
+        it("givenEmail_WhenConatain'*,()'_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc().*@abc.com.com");
+              assert(check == false);
+        });
+
+         it("givenEmail_WhenContain'%,*'_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc+100*@%abc.com");
+              assert(check == false);
+        });
+
+	it("givenEmail_WhenContain'..'_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc..100@abc.com");
+              assert(check == false);
+        });
+
+        it("givenEmail_WhenLastCharEndWith'.'_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc.@abc.com");
+              assert(check == false);
+        });
+
+        it("givenEmail_WhenTIDContainDigit_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc@abc.com.1n");
+              assert(check == false);
+        });
+
+        it("givenEmail_WhenContainMultipleTID_Should return false ",function(){
+                let check = checkPattern.checkEmail("abc+100@abc.com.in.in");
+              assert(check == false);
+        });
+});
+
