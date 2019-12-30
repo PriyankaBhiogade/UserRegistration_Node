@@ -11,7 +11,7 @@ class UserRegistarion {
         }
 
 	checkMobileNum(mNum){
-                let pattern = RegExp("^[0-9]{2}[[:space:]][0-9]{10}$")
+                let pattern = RegExp("^[0-9]{2}[ ]{1}[0-9]{10}$")
                 return pattern.test(mNum);
         }
 
