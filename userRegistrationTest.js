@@ -197,3 +197,39 @@ describe("Mobile Number validation Test",function() {
         });
 });
 
+describe("Password validation Test",function() {
+        it("givenPassword_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkPassword("Priyanka@123");
+                assert.ok(check);
+        });
+
+        it("givenPassword_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkPassword("@Priyanka145");
+                assert.ok(check);
+        });
+
+        it("givenPassword_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkPassword("14Assdqw#14");
+                assert.ok(check);
+        });
+
+	it("givenPassword_WhenTwoSpecialSymbol_Should return false ",function(){
+                let check = checkPattern.checkPassword("$#Priyanka145");
+                assert(check == false);
+        });
+
+        it("givenPassword_WhenDigitIsMissing_Should return false ",function(){
+                let check = checkPattern.checkPassword("Priyanka@");
+                assert(check == false);
+        });
+
+        it("givenPassword_WhenCapitalLetterMissing_Should return false",function(){
+                let check = checkPattern.checkPassword("ariyanka@145");
+                assert(check == false);
+        });
+
+        it("givenPassword_WhenContainDigitOnly_Should return false ",function(){
+                let check = checkPattern.checkPassword("1452255121");
+                assert(check == false);
+        });
+});
