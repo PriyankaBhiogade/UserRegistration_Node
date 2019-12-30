@@ -51,7 +51,6 @@ describe("First Name validation Test",function() {
                 let check = checkPattern.checkFirstName("pRiY@");
                 assert(check == false);
         });
-
 });
 
 describe("Emial validation Test",function() {
@@ -148,6 +147,53 @@ describe("Emial validation Test",function() {
         it("givenEmail_WhenContainMultipleTID_Should return false ",function(){
                 let check = checkPattern.checkEmail("abc+100@abc.com.in.in");
               assert(check == false);
+        });
+});
+
+describe("Mobile Number validation Test",function() {
+        it("givenMobileNumber_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkMobileNum("09 9874563210");
+                assert.ok(check);
+        });
+
+        it("givenMobileNumber_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkMobileNum("91 1425367485");
+                assert.ok(check);
+        });
+
+        it("givenMobileNumber_WhenProper_Should return true ",function(){
+                let check = checkPattern.checkMobileNum("11 0014253674")
+                assert.ok(check);
+        });
+
+        it("givenMobileNumber_WhenContainLessThan10Digit_Should return false ",function(){
+                let check = checkPattern.checkMobileNum("1425367");
+                assert(check == false);
+        });
+
+        it("givenMobileNumber_WhenEmpty_Should return false ",function(){
+                let check = checkPattern.checkMobileNum("");
+                assert(check == false);
+        });
+
+	it("givenMobileNumber_WhenOnly10Digit_Should return false ",function(){
+                let check = checkPattern.checkMobileNum("9874563214")
+                assert(check == false);
+        });
+
+        it("givenMobileNumber_WhenContainChar_Should return false ",function(){
+                let check = checkPattern.checkMobileNum("1425367a14");
+                assert(check == false);
+        });
+
+        it("givenMobileNumber_WhenContainSpaceInBetween_Should return false ",function(){
+                let check = checkPattern.checkMobileNum("91 1452 3698");
+                assert(check == false);
+        });
+
+	it("givenMobileNumber_WhenContainLessThan10Digit_Should return false",function(){
+                let check = checkPattern.checkMobileNum("91 145698");
+                assert(check == false);
         });
 });
 
